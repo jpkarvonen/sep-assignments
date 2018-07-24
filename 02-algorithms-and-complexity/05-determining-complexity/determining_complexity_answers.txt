@@ -1,0 +1,34 @@
+1. What's the Big-O of the following algorithm?
+
+  The Big-O is O(1) since the number of operations is constant no
+  matter the input.
+
+2. What's the Big-O of the following algorithm?
+
+  The Big-O is O(n) since the algorithm is iterative – it will perform n number
+  of operations.
+
+3. What's the Big-O of the following algorithm?
+
+  The Big-O is O(n^2) since there are two loops iterating over a an array and
+  its collection of sub-arrays. Iterating over the outer array is O(n). Iterating
+  over the inner-arrays is also O(n).Thus the answer is O(n) * O(n) or O(n^2).
+
+4. What's the Big-O of the following algorithm?
+
+  The Big-O is O(2^n). When mapping out the number of operation for n as n grows,
+  it becomes clear quickly that the growth is exponential (for n = 2 there are
+  2 operations, for n = 10 there are 1023 operations). Additionally, when you
+  draw out the recursion tree, you find that the tree always has a depth of n,
+  which you allows you to also intuitively come to the conclusion that the answer
+  is O(2^n) because the tree reveals exponential growth.
+
+5. What's the Big-O of the following algorithm?
+
+  The Big-O is 0(n) since the while loop will run n-1 times which we can reduce
+  to n.
+
+6. What's the Big-O of the following algorithm?
+
+  The Big-O is O(n log n). Like merge sort, this algorithm executes an additional
+  layer of recursive calls as n doubles.

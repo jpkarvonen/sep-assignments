@@ -1,0 +1,22 @@
+Version 1 Big O
+  The Big O is O(n^2) since this version utilizes a nested loop (outer
+  loop is O(n), inner loop is O(n), thus O(n) * O(n) = O(n^2)).
+
+Version 2 Big O
+  The Big O of this version is O(n log n) since it utilizes Merge
+  Sort. Merge sort iterates through the total size of the input, determining
+  the linear portion of its complexity. Because it also employs a
+  divide and conquer strategy, you get the logarithmic portion. The entire
+  input (n) is iterated through log(n) times, therefore n log n is the worst
+  case time complexity.
+
+Version 3 Big O
+  The Big O of this version is O(n log n) since it utilizes Heap
+  Sort. A heap is a complete binary tree, the height of which is
+  log(n). In creating the heap (a min heap in this case ) the worst
+  case scenario is needing to move an element from the root to the leaf
+  node. That will be done for n/2 elements (since it is a binary tree).
+  Thus, the worst case is n/2 * log(n) or n log n.
+
+  The space complexity of this version is the best ( O(1) ) since Heap Sort
+  sorts in place (it doesn't need to duplicate the input to sort it).

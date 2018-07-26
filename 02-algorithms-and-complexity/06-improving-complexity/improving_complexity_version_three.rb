@@ -1,28 +1,49 @@
-# This method takes n arrays as input and combine them in sorted ascending  order
-def poorly_written_ruby(*arrays)
-  combined_array = []
-  arrays.each do |array|
-    array.each do |value|
-      combined_array << value
-    end
-  end
+#Improving for space complexity
 
-  sorted_array = [combined_array.delete_at(combined_array.length-1)]
+# I utilize Heap Sort which has a time complexity
+# of O(n log n) and a space complexity of O(1)
+# since it sorts in place.
 
-  for val in combined_array
-    i = 0
-    while i < sorted_array.length
-      if val <= sorted_array[i]
-        sorted_array.insert(i, val)
-        break
-      elsif i == sorted_array.length - 1
-        sorted_array << val
+def better_written_ruby_heap_sort(*arrays)
+  combined_array = arrays.flatten
+
+  #heapify
+  (1...combined_array.length).each do |i|
+    #move up
+    child = i
+    while child > 0
+      parent = (child - 1) / 2
+      if combined_array[parent] < combined_array[child]
+        combined_array[parent], combined_array[child] = combined_array[child], combined_array[parent]
+        child = parent
+      else
         break
       end
-      i+=1
     end
   end
 
-  # Return the sorted array
-  sorted_array
+  sort_and_move_down(combined_array)
+  combined_array
+end
+
+def sort_and_move_down(collection)
+  i = collection.length - 1
+  while i > 0
+    collection[0], collection[i] = collection[i], collection[0]
+    i -= 1
+    #move down
+    parent = 0
+    while parent * 2 + 1 <= i
+      child = parent * 2 + 1
+      if child < i && collection[child] < collection[child + 1]
+        child += 1
+      end
+      if collection[parent] < collection[child]
+        collection[parent], collection[child] = collection[child], collection[parent]
+        parent = child
+      else
+        break
+      end
+    end
+  end
 end

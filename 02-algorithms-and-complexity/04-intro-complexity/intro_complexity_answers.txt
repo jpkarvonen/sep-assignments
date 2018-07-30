@@ -38,7 +38,7 @@
    Analyze the graph and denote its Big-O somewhere on the graph.
 	     O(n)
 
-10. What is the Big-O of binary search?
+10. What is the Big-O of binary search?02-algorithms-and-complexity
 	     O(log n)
 
 11. What is the Big-Ω of binary search?

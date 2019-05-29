@@ -39,7 +39,7 @@ Describe three collision resolution strategies not mentioned here.
 
 * Coalesced hashing
     A hybrid of chaining and open addressing, coalesced hashing links
-    together chains of nodes within the table itself. Like open addressing,it
+    together chains of nodes within the table itself. Like open addressing, it
     achieves space usage and (somewhat diminished) cache advantages over chaining.
     Like chaining, it does not exhibit clustering effects; in fact, the table can
     be efficiently filled to a high density. Unlike chaining, it cannot have more

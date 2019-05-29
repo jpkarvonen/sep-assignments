@@ -8,7 +8,7 @@ class Screen
   def initialize(width, height)
     @width = width
     @height = height
-    @matrix = Array.new(height){Array.new(width){Array.new(5){|index| 0}}}
+    @matrix = Array.new( height ){ Array.new( width ){ Array.new( 5 ){ 0 } } }
   end
 
   # Insert a Pixel at x, y

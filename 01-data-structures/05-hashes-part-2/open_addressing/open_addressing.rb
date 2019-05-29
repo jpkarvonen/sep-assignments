@@ -13,12 +13,15 @@ class OpenAddressing
     index = index(node.key, self.size)
     if !@items[index]
       @items[index] = node
-    elsif next_open_index(index) != -1
-      @items[next_open_index(index)] = node
     else
-      self.resize
-      new_index = index(node.key, self.size)
-      @items[new_index] = node
+      next_open = next_open_index(index)
+      if next_open != -1
+        @items[next_open] = node
+      else
+        self.resize
+        new_index = index(node.key, self.size)
+        @items[new_index] = node
+      end
     end
   end
 
